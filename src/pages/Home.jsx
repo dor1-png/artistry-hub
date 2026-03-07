@@ -129,7 +129,7 @@ export default function Home() {
       {/* Portfolio Section - The Body */}
       <section id="portfolio" className="py-32 px-8 bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900">Work</h2>
+          <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900 animate-fade-in-up">Work</h2>
 
           {/* Project 1 - Left Aligned */}
           <button
