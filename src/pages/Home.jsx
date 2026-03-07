@@ -33,10 +33,10 @@ export default function Home() {
         <div className="max-w-3xl text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-6xl md:text-7xl font-light leading-tight tracking-tight">
-              Where Art Meets <span className="italic text-gray-400">Intention</span>
+              {content.hero_title || 'Where Art Meets Intention'}
             </h1>
             <p className="text-lg md:text-xl font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Exploring the intersection of emotion and form through intentional creation.
+              {content.hero_subtitle || 'Exploring the intersection of emotion and form through intentional creation.'}
             </p>
           </div>
           
