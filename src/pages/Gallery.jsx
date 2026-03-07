@@ -106,13 +106,7 @@ export default function Gallery() {
     }
   ];
 
-  // Extract unique categories
-  const categories = ['All', ...new Set(allArtworks.map(art => art.category))];
 
-  // Filter artworks by category
-  const filteredArtworks = activeCategory === 'All'
-    ? allArtworks
-    : allArtworks.filter(art => art.category === activeCategory);
 
   const handleArtworkClick = (index) => {
     setSelectedIndex(index);
