@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import ArtworkModal from '../components/ArtworkModal';
 import GalleryGrid from '../components/gallery/GalleryGrid.jsx';
-import CategoryFilter from '../components/gallery/CategoryFilter.jsx';
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('All');
 
   // All artworks with extended metadata
   const allArtworks = [
