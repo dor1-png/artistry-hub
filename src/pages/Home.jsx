@@ -61,7 +61,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {/* Left: Image - Height matches text block */}
             <div
-              className="bg-gray-900 rounded-sm overflow-hidden transition-opacity duration-1200 h-full"
+              className="bg-gray-900 rounded-sm overflow-hidden transition-opacity duration-1200 h-full animate-slide-in-left"
               style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 0) }}
             >
               <img
@@ -72,7 +72,7 @@ export default function Home() {
             </div>
 
             {/* Right: Philosophy Breakdown - 50/50 split */}
-            <div className="space-y-12 md:space-y-10 flex flex-col justify-start">
+            <div className="space-y-12 md:space-y-10 flex flex-col justify-start animate-slide-in-right animation-delay-100">
               <p className="text-5xl md:text-6xl font-light leading-tight tracking-tight">
                 A Precise Breakdown
               </p>
