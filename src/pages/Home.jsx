@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { base44 } from '@/api/base44Client';
 
 export default function Home() {
   const navigate = useNavigate();
+  const [content, setContent] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadContent = async () => {
+      try {
+        const homeContent = await base44.entities.Content.filter({ section: 'home' });
+        const contentMap = {};
+        homeContent.forEach(item => {
+          contentMap[item.key] = item.value;
+        });
+        setContent(contentMap);
+      } catch (error) {
+        console.error('Failed to load content:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadContent();
+  }, []);
 
   return (
     <div className="w-full">
