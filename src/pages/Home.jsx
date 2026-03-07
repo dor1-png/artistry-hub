@@ -165,11 +165,11 @@ export default function Home() {
           {/* Project 2 - Right Aligned */}
           <button
             onClick={() => navigate('/Eclecticism')}
-            className="mb-40 w-full text-left group"
+            className="mb-40 w-full text-left group scroll-fade-in"
           >
             <div className="grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
               <div
-                className="transition-opacity duration-1200 md:order-2"
+                className="transition-opacity duration-1200 md:order-2 animate-slide-in-right"
                 style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
               >
                 <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
@@ -181,7 +181,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="transition-opacity duration-1200 md:order-1"
+                className="transition-opacity duration-1200 md:order-1 animate-slide-in-left animation-delay-100"
                 style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
               >
                 <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Eclecticism</h3>
