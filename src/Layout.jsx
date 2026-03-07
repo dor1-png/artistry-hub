@@ -15,15 +15,14 @@ export default function Layout({ children, currentPageName }) {
   ];
 
   const scrollToSection = (id, page) => {
+    setIsMenuOpen(false);
     if (page && page !== '/') {
-      window.location.href = page;
-      setIsMenuOpen(false);
+      navigate(page);
       return;
     }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
     }
   };
 
