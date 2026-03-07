@@ -49,12 +49,14 @@
  */
 import Home from './pages/Home';
 import Artist from './pages/Artist';
+import Gallery from './pages/Gallery';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
     "Home": Home,
     "Artist": Artist,
+    "Gallery": Gallery,
 }
 
 export const pagesConfig = {
