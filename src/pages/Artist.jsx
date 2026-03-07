@@ -1,8 +1,42 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 export default function Artist() {
+  const artistSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Artist",
+    "description": "Contemporary multidisciplinary artist working across digital, painting, photography, and sculpture",
+    "url": "https://artistry.com/artist",
+    "sameAs": [],
+    "knowsAbout": [
+      "Digital Painting",
+      "Contemporary Art",
+      "Photography",
+      "Sculpture",
+      "Installation Art",
+      "Minimalism",
+      "Abstract Expressionism"
+    ],
+    "jobTitle": "Contemporary Artist",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ARTISTRY"
+    },
+    "awards": [
+      "Featured in 20+ international galleries"
+    ]
+  };
+
   return (
-    <div className="w-full">
+    <>
+      <SEO
+        title="Artist Statement - ARTISTRY"
+        description="Meet the artist behind ARTISTRY. Explore artistic philosophy, creative journey, and inspirations spanning 10+ years of multidisciplinary contemporary art practice."
+        canonical="https://artistry.com/artist"
+        schema={artistSchema}
+      />
+      <div className="w-full">
       {/* Hero Section */}
       <section className="min-h-[60vh] flex flex-col justify-center px-6 py-20 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
