@@ -52,6 +52,7 @@ import Artist from './pages/Artist';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
+import ThirdPerson from './pages/ThirdPerson';
 import __Layout from './Layout.jsx';
 
 
@@ -61,6 +62,7 @@ export const PAGES = {
     "Contact": Contact,
     "Gallery": Gallery,
     "Home": Home,
+    "ThirdPerson": ThirdPerson,
 }
 
 export const pagesConfig = {
