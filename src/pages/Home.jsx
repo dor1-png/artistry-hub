@@ -139,6 +139,7 @@ export default function Home() {
                 className="group cursor-pointer"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => handleArtworkClick(index)}
               >
                 <div className="relative overflow-hidden bg-gray-100 aspect-square mb-6">
                   <img
@@ -148,6 +149,12 @@ export default function Home() {
                       hoveredIndex === index ? 'scale-105' : 'scale-100'
                     }`}
                   />
+                  {/* Zoom Indicator */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white font-light text-sm">
+                      Click to view
+                    </span>
+                  </div>
                 </div>
                 <h3 className="text-xl font-light tracking-wide mb-1">{artwork.title}</h3>
                 <p className="text-sm text-gray-500 font-light">{artwork.category}</p>
