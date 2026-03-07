@@ -56,12 +56,12 @@ export default function Home() {
       </section>
 
       {/* POV Section - The Statement */}
-      <section id="pov" className="py-32 px-8 bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            {/* Left: Image */}
+      <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            {/* Left: Image - Height matches text block */}
             <div
-              className="bg-gray-900 aspect-[3/4] rounded-sm overflow-hidden transition-opacity duration-1200"
+              className="bg-gray-900 rounded-sm overflow-hidden transition-opacity duration-1200 h-full"
               style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 0) }}
             >
               <img
@@ -71,52 +71,52 @@ export default function Home() {
               />
             </div>
 
-            {/* Right: Philosophy Breakdown */}
-            <div className="space-y-20">
-              <p className="text-5xl md:text-6xl font-light leading-tight tracking-tight mb-16">
+            {/* Right: Philosophy Breakdown - 50/50 split */}
+            <div className="space-y-12 md:space-y-10 flex flex-col justify-start">
+              <p className="text-5xl md:text-6xl font-light leading-tight tracking-tight">
                 A Precise Breakdown
               </p>
 
               {/* The Discipline */}
               <div
-                className="space-y-4 transition-opacity duration-1200"
+                className="space-y-3 transition-opacity duration-1200"
                 style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 200) }}
               >
                 <h3 className="text-xs font-light tracking-[0.2em] text-gray-500 uppercase">
                   The Discipline
                 </h3>
-                <p className="text-lg md:text-xl font-light leading-relaxed text-gray-900">
+                <p className="text-lg font-light leading-relaxed text-gray-900">
                   Grounded in the rigorous physical standards of Contemporary Circus. The pursuit of technical precision—like the focus required for a two-minute handstand hold. Every movement measured, every muscle engaged.
                 </p>
               </div>
 
               {/* The Narrative */}
               <div
-                className="space-y-4 transition-opacity duration-1200"
+                className="space-y-3 transition-opacity duration-1200"
                 style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 400) }}
               >
                 <h3 className="text-xs font-light tracking-[0.2em] text-gray-500 uppercase">
                   The Narrative
                 </h3>
-                <p className="text-lg md:text-xl font-light leading-relaxed text-gray-900">
+                <p className="text-lg font-light leading-relaxed text-gray-900">
                   Utilizing Physical Theatre to explore the boundary between presence and absence, the corporeal and the ephemeral. The body as text. Movement as language.
                 </p>
               </div>
 
               {/* The Intersection */}
               <div
-                className="space-y-4 transition-opacity duration-1200"
+                className="space-y-3 transition-opacity duration-1200"
                 style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 600) }}
               >
                 <h3 className="text-xs font-light tracking-[0.2em] text-gray-500 uppercase">
                   The Intersection
                 </h3>
-                <p className="text-lg md:text-xl font-light leading-relaxed text-gray-900">
+                <p className="text-lg font-light leading-relaxed text-gray-900">
                   A multidisciplinary approach that seeks innovation through the fusion of movement, light, and shadow. Where circus becomes theatre. Where precision becomes art.
                 </p>
               </div>
 
-              <div className="pt-12 border-t border-gray-200">
+              <div className="pt-8 border-t border-gray-200">
                 <p className="text-sm font-light text-gray-600 tracking-wide italic">
                   "Precision is the bridge between physical limit and narrative soul."
                 </p>
