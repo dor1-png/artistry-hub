@@ -53,7 +53,7 @@ export default function Eclecticism() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-16">
             <div
-              className="space-y-8 transition-opacity duration-1200"
+              className="space-y-8 transition-opacity duration-1200 animate-fade-in-up"
               style={{ opacity: getOpacity(document.getElementById('content')?.offsetTop || 0) }}
             >
               <h1 className="text-6xl md:text-7xl font-light tracking-tight">Eclecticism</h1>
