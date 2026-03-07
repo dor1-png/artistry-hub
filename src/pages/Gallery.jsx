@@ -118,8 +118,40 @@ export default function Gallery() {
     setSelectedIndex(newIndex);
   };
 
+  const gallerySchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "ARTISTRY Gallery",
+    "description": "Curated collection of contemporary artworks including digital paintings, sculptures, photography, and installations",
+    "url": "https://artistry.com/gallery",
+    "hasPart": allArtworks.map(artwork => ({
+      "@type": "CreativeWork",
+      "name": artwork.title,
+      "description": artwork.description,
+      "image": artwork.image,
+      "creator": {
+        "@type": "Person",
+        "name": "Artist"
+      },
+      "datePublished": `${artwork.year}-01-01`,
+      "artMedium": artwork.medium,
+      "offers": {
+        "@type": "Offer",
+        "price": artwork.price.replace('$', ''),
+        "availability": artwork.status === 'Available' ? 'InStock' : 'OutOfStock'
+      }
+    }))
+  };
+
   return (
-    <div className="w-full">
+    <>
+      <SEO
+        title="ARTISTRY Gallery - Contemporary Art Collection"
+        description="Explore our curated collection of contemporary artworks across digital, painting, photography, and sculpture. Discover unique pieces and artist insights."
+        canonical="https://artistry.com/gallery"
+        schema={gallerySchema}
+      />
+      <div className="w-full">
       {/* Hero Section */}
       <section className="min-h-[50vh] flex flex-col justify-center px-6 py-20 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-7xl mx-auto w-full">
