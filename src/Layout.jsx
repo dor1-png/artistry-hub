@@ -1,51 +1,39 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Layout({ children, currentPageName }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const navItems = [
-    { label: 'Home', id: 'hero', page: '/' },
-    { label: 'Gallery', page: '/Gallery' },
-    { label: 'Artist', page: '/Artist' },
-    { label: 'About', id: 'about', page: '/' },
-    { label: 'Contact', page: '/Contact' },
-    { label: 'Admin', page: '/Admin' }
+    { label: 'Work', href: '#portfolio' },
+    { label: 'POV', href: '#pov' },
+    { label: 'Contact', href: '#contact' }
   ];
 
-  const scrollToSection = (id, page) => {
+  const scrollToSection = (href) => {
     setIsMenuOpen(false);
-    if (page && page !== '/') {
-      navigate(page);
-      return;
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-    navigate('/');
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
   };
 
   return (
-    <div className="bg-white text-gray-800">
+    <div className="bg-white text-gray-900">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-200/50 z-50">
-        <nav className="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-light tracking-wide cursor-pointer" onClick={() => scrollToSection('hero')}>
-            ARTISTRY
+      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <nav className="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+          <h1 className="text-2xl font-light tracking-tight cursor-pointer">
+            DOR REGEV
           </h1>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-8 text-sm font-light">
+          <div className="hidden md:flex gap-12 text-xs font-light tracking-widest">
             {navItems.map(item => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.id, item.page)}
-                className="transition-colors duration-300 hover:text-gray-500"
+                onClick={() => scrollToSection(item.href)}
+                className="transition-colors duration-300 hover:text-gray-600 uppercase"
               >
                 {item.label}
               </button>
@@ -57,19 +45,19 @@ export default function Layout({ children, currentPageName }) {
             className="md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </nav>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200/50">
-            <div className="flex flex-col gap-4 px-6 py-6 text-sm font-light">
+          <div className="md:hidden bg-white border-t border-gray-100">
+            <div className="flex flex-col gap-6 px-8 py-6 text-xs font-light tracking-widest uppercase">
               {navItems.map(item => (
                 <button
                   key={item.label}
-                  onClick={() => scrollToSection(item.id, item.page)}
-                  className="text-left transition-colors hover:text-gray-500"
+                  onClick={() => scrollToSection(item.href)}
+                  className="text-left transition-colors hover:text-gray-600"
                 >
                   {item.label}
                 </button>
@@ -80,14 +68,14 @@ export default function Layout({ children, currentPageName }) {
       </header>
 
       {/* Main Content */}
-      <main className="pt-20">
+      <main className="pt-0">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200/50 mt-32">
-        <div className="max-w-7xl mx-auto px-6 py-12 text-center text-sm font-light text-gray-600">
-          <p>© 2026 Artistry. All works created with intention.</p>
+      <footer className="border-t border-gray-100 py-16 px-8 bg-white">
+        <div className="max-w-7xl mx-auto text-center text-xs font-light text-gray-500 tracking-widest">
+          <p>© 2026 DOR REGEV. All rights reserved.</p>
         </div>
       </footer>
     </div>
