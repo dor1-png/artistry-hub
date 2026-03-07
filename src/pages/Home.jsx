@@ -132,30 +132,35 @@ export default function Home() {
           <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900">Work</h2>
 
           {/* Project 1 - Left Aligned */}
-          <div className="mb-40 grid md:grid-cols-2 gap-16 items-center">
-            <div
-              className="transition-opacity duration-1200"
-              style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
-            >
-              <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=800&fit=crop"
-                  alt="Third Person"
-                  className="w-full h-full object-cover"
-                />
+          <button
+            onClick={() => navigate('/ThirdPerson')}
+            className="mb-40 w-full text-left group"
+          >
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div
+                className="transition-opacity duration-1200"
+                style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
+              >
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=800&fit=crop"
+                    alt="Third Person"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div
+                className="transition-opacity duration-1200"
+                style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
+              >
+                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Third Person</h3>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  An investigation into perspective and embodiment. Exploring the distance between performer and observer through ritualistic movement.
+                </p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2024</p>
               </div>
             </div>
-            <div
-              className="transition-opacity duration-1200"
-              style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
-            >
-              <h3 className="text-5xl font-light tracking-tight mb-6">Third Person</h3>
-              <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                An investigation into perspective and embodiment. Exploring the distance between performer and observer through ritualistic movement.
-              </p>
-              <p className="text-sm font-light text-gray-500 tracking-widest">2024</p>
-            </div>
-          </div>
+          </button>
 
           {/* Project 2 - Right Aligned */}
           <div className="mb-40 grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
