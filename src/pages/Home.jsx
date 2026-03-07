@@ -93,10 +93,18 @@ export default function Home() {
         <div className="max-w-3xl text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-6xl md:text-7xl font-light leading-tight tracking-tight">
-              {content.hero_title || 'Where Art Meets Intention'}
+              <EditableText 
+                contentKey="hero_title" 
+                value={content.hero_title || 'Where Art Meets Intention'}
+                isLarge={false}
+              />
             </h1>
             <p className="text-lg md:text-xl font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              {content.hero_subtitle || 'Exploring the intersection of emotion and form through intentional creation.'}
+              <EditableText 
+                contentKey="hero_subtitle" 
+                value={content.hero_subtitle || 'Exploring the intersection of emotion and form through intentional creation.'}
+                isLarge={true}
+              />
             </p>
           </div>
           
