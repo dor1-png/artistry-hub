@@ -285,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer/CTA - The Dialogue */}
+      {/* Footer/CTA - Start a Dialogue */}
       <section className="min-h-screen grid md:grid-cols-2 bg-white" style={{ paddingTop: '120px' }}>
         {/* Left: Imagery */}
         <div className="bg-gray-200 aspect-auto md:aspect-auto min-h-screen md:min-h-auto overflow-hidden">
@@ -299,15 +299,18 @@ export default function Home() {
         {/* Right: Inquiry Form */}
         <div className="flex flex-col justify-center px-8 md:px-16 py-20 md:py-0" style={{ paddingLeft: '100px', paddingRight: '100px' }}>
           <div className="max-w-md">
-            <h3 className="text-5xl font-light tracking-tight mb-12">Get in Touch</h3>
+            <h3 className="text-5xl font-light tracking-tight mb-6">Start a Dialogue</h3>
+            <p className="text-lg font-light text-gray-600 mb-12 leading-relaxed">
+              I am available for performance bookings, creative consultancy on innovation, and collaborative inquiries.
+            </p>
             <form className="space-y-8">
               <div className="space-y-3">
                 <label className="block text-xs font-light tracking-widest text-gray-600">INQUIRY TYPE</label>
                 <select className="w-full bg-transparent border-b border-gray-300 pb-3 text-sm font-light focus:outline-none focus:border-gray-800 transition-colors cursor-pointer">
-                  <option>Performances</option>
-                  <option>Consultancy</option>
+                  <option>Performance Booking</option>
+                  <option>Creative Consultancy</option>
                   <option>Collaboration</option>
-                  <option>General</option>
+                  <option>General Inquiry</option>
                 </select>
               </div>
 
