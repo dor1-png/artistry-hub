@@ -39,7 +39,7 @@ export default function Eclecticism() {
       </div>
 
       {/* Hero Section */}
-      <section className="h-screen w-full overflow-hidden relative">
+      <section className="h-screen w-full overflow-hidden relative animate-fade-in">
         <img
           src="https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=1600&h=900&fit=crop"
           alt="Eclecticism"
