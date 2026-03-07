@@ -37,8 +37,9 @@ export default function ArtworkModal({ artwork, isOpen, onClose, onNavigate, tot
         <div className="flex-1 bg-gray-100 flex items-center justify-center min-h-96 md:min-h-full relative group">
           <img
             src={artwork.image}
-            alt={artwork.title}
+            alt={`${artwork.title} - ${artwork.medium}, ${artwork.dimensions}, created in ${artwork.year}`}
             className="max-h-full max-w-full object-contain"
+            title={`${artwork.title} | ${artwork.category}`}
           />
 
           {/* Navigation Arrows */}
