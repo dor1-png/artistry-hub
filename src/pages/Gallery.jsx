@@ -129,22 +129,11 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-12 px-6 bg-white sticky top-20 z-40 border-b border-gray-200/50">
-        <div className="max-w-7xl mx-auto">
-          <CategoryFilter
-            categories={categories}
-            activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
-          />
-        </div>
-      </section>
-
       {/* Gallery Grid */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <GalleryGrid
-            artworks={filteredArtworks}
+            artworks={allArtworks}
             onArtworkClick={handleArtworkClick}
           />
         </div>
@@ -153,11 +142,11 @@ export default function Gallery() {
       {/* Artwork Modal */}
       {selectedIndex !== null && (
         <ArtworkModal
-          artwork={filteredArtworks[selectedIndex]}
+          artwork={allArtworks[selectedIndex]}
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           onNavigate={handleNavigateArtwork}
-          totalArtworks={filteredArtworks.length}
+          totalArtworks={allArtworks.length}
           currentIndex={selectedIndex}
         />
       )}
