@@ -25,16 +25,16 @@ export default function Home() {
       <section id="hero" className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden">
         <div className="max-w-4xl text-center space-y-16">
           <div className="space-y-12" style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}>
-            <div className="space-y-6">
+            <div className="space-y-6 animate-fade-in-up">
               <h1 className="text-8xl md:text-9xl font-light tracking-tight leading-none">
                 DOR
                 <br />
                 REGEV
               </h1>
-              <p className="text-xl md:text-2xl font-light tracking-wide text-gray-600 mt-8">
+              <p className="text-xl md:text-2xl font-light tracking-wide text-gray-600 mt-8 animate-fade-in-up animation-delay-100">
                 Multidisciplinary Artist
               </p>
-              <div className="flex justify-center gap-4 text-sm font-light tracking-widest text-gray-500 mt-6">
+              <div className="flex justify-center gap-4 text-sm font-light tracking-widest text-gray-500 mt-6 animate-fade-in-up animation-delay-200">
                 <span>Theatre</span>
                 <span>•</span>
                 <span>Contemporary Circus</span>
@@ -43,7 +43,7 @@ export default function Home() {
               </div>
             </div>
 
-            <button className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500">
+            <button className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300">
               ENTER THE PROCESS
             </button>
           </div>
