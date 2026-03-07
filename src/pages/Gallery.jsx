@@ -183,6 +183,7 @@ export default function Gallery() {
           currentIndex={selectedIndex}
         />
       )}
-    </div>
+      </div>
+    </>
   );
 }
