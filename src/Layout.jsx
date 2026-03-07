@@ -38,8 +38,8 @@ export default function Layout({ children, currentPageName }) {
           <div className="hidden md:flex gap-8 text-sm font-light">
             {navItems.map(item => (
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                key={item.label}
+                onClick={() => scrollToSection(item.id, item.page)}
                 className="transition-colors duration-300 hover:text-gray-500"
               >
                 {item.label}
