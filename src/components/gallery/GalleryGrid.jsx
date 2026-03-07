@@ -16,11 +16,12 @@ export default function GalleryGrid({ artworks, onArtworkClick }) {
           <div className="relative overflow-hidden bg-gray-100 aspect-square mb-6">
             <img
               src={artwork.image}
-              alt={artwork.title}
+              alt={`${artwork.title} - ${artwork.category} artwork by artist, ${artwork.medium}, ${artwork.year}`}
               className={`w-full h-full object-cover transition-transform duration-500 ${
                 hoveredIndex === index ? 'scale-105' : 'scale-100'
               }`}
               loading="lazy"
+              title={artwork.title}
             />
             {/* Overlay with metadata preview */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex flex-col items-end justify-end p-4">
