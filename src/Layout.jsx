@@ -62,8 +62,8 @@ export default function Layout({ children, currentPageName }) {
             <div className="flex flex-col gap-4 px-6 py-6 text-sm font-light">
               {navItems.map(item => (
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  key={item.label}
+                  onClick={() => scrollToSection(item.id, item.page)}
                   className="text-left transition-colors hover:text-gray-500"
                 >
                   {item.label}
