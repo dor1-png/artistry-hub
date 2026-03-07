@@ -11,7 +11,8 @@ export default function Layout({ children, currentPageName }) {
     { label: 'Gallery', page: '/Gallery' },
     { label: 'Artist', page: '/Artist' },
     { label: 'About', id: 'about', page: '/' },
-    { label: 'Contact', page: '/Contact' }
+    { label: 'Contact', page: '/Contact' },
+    { label: 'Admin', page: '/Admin' }
   ];
 
   const scrollToSection = (id, page) => {
