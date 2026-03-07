@@ -194,30 +194,35 @@ export default function Home() {
           </button>
 
           {/* Project 3 - Left Aligned */}
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div
-              className="transition-opacity duration-1200"
-              style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
-            >
-              <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=600&h=800&fit=crop"
-                  alt="Umbra"
-                  className="w-full h-full object-cover"
-                />
+          <button
+            onClick={() => navigate('/Umbra')}
+            className="w-full text-left group"
+          >
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div
+                className="transition-opacity duration-1200"
+                style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
+              >
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=600&h=800&fit=crop"
+                    alt="Umbra"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div
+                className="transition-opacity duration-1200"
+                style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
+              >
+                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Umbra</h3>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  Shadow as subject. Exploring the boundary between presence and absence, the corporeal and the ephemeral through controlled darkness.
+                </p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
               </div>
             </div>
-            <div
-              className="transition-opacity duration-1200"
-              style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
-            >
-              <h3 className="text-5xl font-light tracking-tight mb-6">Umbra</h3>
-              <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                Shadow as subject. Exploring the boundary between presence and absence, the corporeal and the ephemeral through controlled darkness.
-              </p>
-              <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
-            </div>
-          </div>
+          </button>
         </div>
       </section>
 
