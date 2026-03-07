@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-import ArtworkModal from '../components/ArtworkModal';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
