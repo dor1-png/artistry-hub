@@ -163,30 +163,35 @@ export default function Home() {
           </button>
 
           {/* Project 2 - Right Aligned */}
-          <div className="mb-40 grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
-            <div
-              className="transition-opacity duration-1200 md:order-2"
-              style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
-            >
-              <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=600&h=800&fit=crop"
-                  alt="Eclecticism"
-                  className="w-full h-full object-cover"
-                />
+          <button
+            onClick={() => navigate('/Eclecticism')}
+            className="mb-40 w-full text-left group"
+          >
+            <div className="grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
+              <div
+                className="transition-opacity duration-1200 md:order-2"
+                style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
+              >
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=600&h=800&fit=crop"
+                    alt="Eclecticism"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div
+                className="transition-opacity duration-1200 md:order-1"
+                style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
+              >
+                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Eclecticism</h3>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  A collision of disciplines. Where circus vocabulary meets theatrical narrative. A study in hybridity and the spaces between forms.
+                </p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
               </div>
             </div>
-            <div
-              className="transition-opacity duration-1200 md:order-1"
-              style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
-            >
-              <h3 className="text-5xl font-light tracking-tight mb-6">Eclecticism</h3>
-              <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                A collision of disciplines. Where circus vocabulary meets theatrical narrative. A study in hybridity and the spaces between forms.
-              </p>
-              <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
-            </div>
-          </div>
+          </button>
 
           {/* Project 3 - Left Aligned */}
           <div className="grid md:grid-cols-2 gap-16 items-center">
