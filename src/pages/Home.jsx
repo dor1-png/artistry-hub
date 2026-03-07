@@ -131,10 +131,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900 animate-fade-in-up">Work</h2>
 
-          {/* Project 1 - Left Aligned */}
+          {/* Project 1 - Third Person */}
           <button
             onClick={() => navigate('/ThirdPerson')}
-            className="mb-40 w-full text-left group scroll-fade-in"
+            className="mb-48 w-full text-left group scroll-fade-in"
           >
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
@@ -155,17 +155,17 @@ export default function Home() {
               >
                 <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Third Person</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  An investigation into perspective and embodiment. Exploring the distance between performer and observer through ritualistic movement.
+                  A contemporary circus development exploring the intersection of movement and physical limit. Originally performed at the Train Theater, this work investigates the precise boundary between technical virtuosity and embodied presence.
                 </p>
                 <p className="text-sm font-light text-gray-500 tracking-widest">2024</p>
               </div>
             </div>
           </button>
 
-          {/* Project 2 - Right Aligned */}
+          {/* Project 2 - Eclecticism */}
           <button
             onClick={() => navigate('/Eclecticism')}
-            className="mb-40 w-full text-left group scroll-fade-in"
+            className="mb-48 w-full text-left group scroll-fade-in"
           >
             <div className="grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
               <div
@@ -186,17 +186,17 @@ export default function Home() {
               >
                 <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Eclecticism</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  A collision of disciplines. Where circus vocabulary meets theatrical narrative. A study in hybridity and the spaces between forms.
+                  A physical theatre performance under the artistic direction of Eden Weiss, focusing on the precision of the performer's body as both instrument and subject. A collision of circus vocabulary with theatrical narrative.
                 </p>
-                <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2025</p>
               </div>
             </div>
           </button>
 
-          {/* Project 3 - Left Aligned */}
+          {/* Project 3 - Umbra */}
           <button
             onClick={() => navigate('/Umbra')}
-            className="w-full text-left group scroll-fade-in"
+            className="mb-48 w-full text-left group scroll-fade-in"
           >
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
@@ -217,12 +217,71 @@ export default function Home() {
               >
                 <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Umbra</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
-                  Shadow as subject. Exploring the boundary between presence and absence, the corporeal and the ephemeral through controlled darkness.
+                  A multidisciplinary ensemble performance exploring the boundary between presence and absence through shadow and light. The performer becomes silhouette, abstraction, and essence.
                 </p>
-                <p className="text-sm font-light text-gray-500 tracking-widest">2023</p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2025</p>
               </div>
             </div>
           </button>
+
+          {/* Project 4 - Gray Elephant */}
+          <div className="w-full text-left group scroll-fade-in">
+            <div className="grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
+              <div
+                className="transition-opacity duration-1200 md:order-2 animate-slide-in-right"
+                style={{ opacity: getOpacity(document.getElementById('project4')?.offsetTop || 0) }}
+              >
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=800&fit=crop"
+                    alt="Gray Elephant"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div
+                className="transition-opacity duration-1200 md:order-1 animate-slide-in-left animation-delay-100"
+                style={{ opacity: getOpacity(document.getElementById('project4')?.offsetTop || 0) }}
+              >
+                <h3 className="text-5xl font-light tracking-tight mb-6">Gray Elephant</h3>
+                <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
+                  A solo project developed under the artistic guidance of Yael Citron, marking a pivotal moment in personal artistic inquiry. An exploration of isolation, presence, and the weight of silence.
+                </p>
+                <p className="text-sm font-light text-gray-500 tracking-widest">2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2026: The Current Dialogue Section */}
+      <section className="py-32 px-8 bg-gray-50" style={{ paddingTop: '160px', paddingBottom: '160px' }}>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900 animate-fade-in-up">2026: The Current Dialogue</h2>
+
+          {/* Active Project 1 */}
+          <div
+            className="mb-40 pb-12 border-b border-gray-300 animate-slide-in-left"
+            style={{ opacity: getOpacity(document.getElementById('active1')?.offsetTop || 0) }}
+          >
+            <h3 className="text-4xl font-light tracking-tight mb-6">Theatronetto Festival 2026</h3>
+            <p className="text-lg font-light text-gray-600 leading-relaxed max-w-3xl">
+              Developing a new retrospective performance that bridges past works with future visions. A comprehensive exploration of artistic evolution and the continuous conversation between discipline, narrative, and innovation.
+            </p>
+            <p className="text-sm font-light text-gray-500 tracking-widest mt-8">UPCOMING</p>
+          </div>
+
+          {/* Active Project 2 */}
+          <div
+            className="animate-slide-in-right animation-delay-100"
+            style={{ opacity: getOpacity(document.getElementById('active2')?.offsetTop || 0) }}
+          >
+            <h3 className="text-4xl font-light tracking-tight mb-6">"Go Explain" at Tzavta Theater</h3>
+            <p className="text-lg font-light text-gray-600 leading-relaxed max-w-3xl">
+              A new work created for the "Miketzaron" festival, continuing the exploration of physical narrative through the lens of contemporary performance. Investigating how the body articulates meaning beyond conventional language.
+            </p>
+            <p className="text-sm font-light text-gray-500 tracking-widest mt-8">IN DEVELOPMENT</p>
+          </div>
         </div>
       </section>
 
