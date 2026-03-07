@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Layout({ children, currentPageName }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { label: 'Home', id: 'hero', page: '/' },
