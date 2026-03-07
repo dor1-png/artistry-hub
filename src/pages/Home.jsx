@@ -61,6 +61,7 @@ export default function Home() {
           onChange={(e) => setEditValue(e.target.value)}
           onBlur={() => handleSave(contentKey)}
           onKeyDown={(e) => e.key === 'Enter' && e.ctrlKey && handleSave(contentKey)}
+          dir="auto"
           className="w-full bg-transparent border border-gray-300 p-2 text-lg md:text-xl font-light text-gray-600 focus:outline-none focus:border-gray-800 resize-none"
           rows="3"
         />
@@ -71,6 +72,7 @@ export default function Home() {
           onChange={(e) => setEditValue(e.target.value)}
           onBlur={() => handleSave(contentKey)}
           onKeyDown={(e) => e.key === 'Enter' && handleSave(contentKey)}
+          dir="auto"
           className="w-full bg-transparent border-b border-gray-800 pb-1 text-6xl md:text-7xl font-light focus:outline-none"
         />
       );
