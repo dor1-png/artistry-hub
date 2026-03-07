@@ -206,7 +206,6 @@ export default function Artist() {
           </p>
         </div>
       </section>
-      </div>
-    </>
+    </div>
   );
 }
