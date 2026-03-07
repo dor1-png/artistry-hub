@@ -5,10 +5,11 @@ export default function Layout({ children, currentPageName }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', id: 'hero' },
-    { label: 'Gallery', id: 'gallery' },
-    { label: 'About', id: 'about' },
-    { label: 'Contact', id: 'contact' }
+    { label: 'Home', id: 'hero', page: '/' },
+    { label: 'Gallery', id: 'gallery', page: '/' },
+    { label: 'Artist', page: '/Artist' },
+    { label: 'About', id: 'about', page: '/' },
+    { label: 'Contact', id: 'contact', page: '/' }
   ];
 
   const scrollToSection = (id) => {
