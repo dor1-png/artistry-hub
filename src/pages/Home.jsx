@@ -1,92 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
 
 export default function Home() {
   const navigate = useNavigate();
-  const [content, setContent] = useState({});
-  const [contentIds, setContentIds] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState(null);
-  const [editValue, setEditValue] = useState('');
-
-  useEffect(() => {
-    const loadContent = async () => {
-      try {
-        const homeContent = await base44.entities.Content.filter({ section: 'home' });
-        const contentMap = {};
-        const idsMap = {};
-        homeContent.forEach(item => {
-          contentMap[item.key] = item.value;
-          idsMap[item.key] = item.id;
-        });
-        setContent(contentMap);
-        setContentIds(idsMap);
-      } catch (error) {
-        console.error('Failed to load content:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    loadContent();
-  }, []);
-
-  const handleEditStart = (key, value) => {
-    setEditing(key);
-    setEditValue(value);
-  };
-
-  const handleSave = async (key) => {
-    try {
-      const contentId = contentIds[key];
-      if (contentId) {
-        await base44.entities.Content.update(contentId, { value: editValue });
-      } else {
-        await base44.entities.Content.create({ key, value: editValue, type: 'text', section: 'home' });
-      }
-      setContent(prev => ({ ...prev, [key]: editValue }));
-      setEditing(null);
-    } catch (error) {
-      console.error('Failed to save content:', error);
-    }
-  };
-
-  const EditableText = ({ contentKey, value, isLarge }) => {
-    if (editing === contentKey) {
-      return isLarge ? (
-        <textarea
-          autoFocus
-          value={editValue}
-          onChange={(e) => setEditValue(e.target.value)}
-          onBlur={() => handleSave(contentKey)}
-          onKeyDown={(e) => e.key === 'Enter' && e.ctrlKey && handleSave(contentKey)}
-          dir="auto"
-          className="w-full bg-transparent border border-gray-300 p-2 text-lg md:text-xl font-light text-gray-600 focus:outline-none focus:border-gray-800 resize-none"
-          rows="3"
-        />
-      ) : (
-        <input
-          autoFocus
-          value={editValue}
-          onChange={(e) => setEditValue(e.target.value)}
-          onBlur={() => handleSave(contentKey)}
-          onKeyDown={(e) => e.key === 'Enter' && handleSave(contentKey)}
-          dir="auto"
-          className="w-full bg-transparent border-b border-gray-800 pb-1 text-6xl md:text-7xl font-light focus:outline-none"
-        />
-      );
-    }
-    return (
-      <span
-        onClick={() => handleEditStart(contentKey, value)}
-        className="cursor-pointer hover:opacity-70 transition-opacity"
-        title="Click to edit"
-      >
-        {value}
-      </span>
-    );
-  };
 
   return (
     <div className="w-full">
@@ -95,18 +12,10 @@ export default function Home() {
         <div className="max-w-3xl text-center space-y-8">
           <div className="space-y-4">
             <h1 className="text-6xl md:text-7xl font-light leading-tight tracking-tight">
-              <EditableText 
-                contentKey="hero_title" 
-                value={content.hero_title || 'Where Art Meets Intention'}
-                isLarge={false}
-              />
+              Where Art Meets Intention
             </h1>
             <p className="text-lg md:text-xl font-light text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              <EditableText 
-                contentKey="hero_subtitle" 
-                value={content.hero_subtitle || 'Exploring the intersection of emotion and form through intentional creation.'}
-                isLarge={true}
-              />
+              Exploring the intersection of emotion and form through intentional creation.
             </p>
           </div>
           
@@ -261,8 +170,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
     </div>
   );
 }
