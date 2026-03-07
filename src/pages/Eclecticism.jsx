@@ -93,13 +93,13 @@ export default function Eclecticism() {
       {/* Gallery Section */}
       <section className="py-32 px-8 bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-light tracking-tight mb-20">Gallery</h2>
+          <h2 className="text-4xl font-light tracking-tight mb-20 animate-fade-in-up">Gallery</h2>
           <div className="grid md:grid-cols-2 gap-12">
             {galleryImages.map((image, idx) => (
               <div
                 key={idx}
-                className="bg-gray-200 aspect-[4/3] rounded-sm overflow-hidden transition-opacity duration-1200"
-                style={{ opacity: getOpacity(document.getElementById('gallery')?.offsetTop || 0) }}
+                className="bg-gray-200 aspect-[4/3] rounded-sm overflow-hidden transition-opacity duration-1200 animate-fade-in-scale"
+                style={{ opacity: getOpacity(document.getElementById('gallery')?.offsetTop || 0), animationDelay: `${idx * 0.1}s` }}
               >
                 <img
                   src={image}
