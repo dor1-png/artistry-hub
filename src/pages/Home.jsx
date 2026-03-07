@@ -171,17 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Artwork Modal */}
-      {selectedIndex !== null && (
-        <ArtworkModal
-          artwork={artworks[selectedIndex]}
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onNavigate={handleNavigateArtwork}
-          totalArtworks={artworks.length}
-          currentIndex={selectedIndex}
-        />
-      )}
+
     </div>
   );
 }
