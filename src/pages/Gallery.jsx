@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ArtworkModal from '../components/ArtworkModal';
-import GalleryGrid from '../components/gallery/GalleryGrid';
-import CategoryFilter from '../components/gallery/CategoryFilter';
+import GalleryGrid from '../components/gallery/GalleryGrid.jsx';
+import CategoryFilter from '../components/gallery/CategoryFilter.jsx';
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState(null);
