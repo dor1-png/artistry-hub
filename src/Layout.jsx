@@ -12,7 +12,12 @@ export default function Layout({ children, currentPageName }) {
     { label: 'Contact', id: 'contact', page: '/' }
   ];
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id, page) => {
+    if (page && page !== '/') {
+      window.location.href = page;
+      setIsMenuOpen(false);
+      return;
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
