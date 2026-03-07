@@ -53,6 +53,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import ThirdPerson from './pages/ThirdPerson';
+import Eclecticism from './pages/Eclecticism';
 import __Layout from './Layout.jsx';
 
 
@@ -63,6 +64,7 @@ export const PAGES = {
     "Gallery": Gallery,
     "Home": Home,
     "ThirdPerson": ThirdPerson,
+    "Eclecticism": Eclecticism,
 }
 
 export const pagesConfig = {
