@@ -39,7 +39,7 @@ export default function ThirdPerson() {
       </div>
 
       {/* Hero Section */}
-      <section className="h-screen w-full overflow-hidden relative">
+      <section className="h-screen w-full overflow-hidden relative animate-fade-in">
         <img
           src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&h=900&fit=crop"
           alt="Third Person"
