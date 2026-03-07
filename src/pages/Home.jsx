@@ -196,11 +196,11 @@ export default function Home() {
           {/* Project 3 - Left Aligned */}
           <button
             onClick={() => navigate('/Umbra')}
-            className="w-full text-left group"
+            className="w-full text-left group scroll-fade-in"
           >
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
-                className="transition-opacity duration-1200"
+                className="transition-opacity duration-1200 animate-slide-in-left"
                 style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
               >
                 <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
@@ -212,7 +212,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className="transition-opacity duration-1200"
+                className="transition-opacity duration-1200 animate-slide-in-right animation-delay-100"
                 style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
               >
                 <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Umbra</h3>
