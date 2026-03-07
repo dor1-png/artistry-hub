@@ -39,7 +39,7 @@ export default function Umbra() {
       </div>
 
       {/* Hero Section */}
-      <section className="h-screen w-full overflow-hidden relative">
+      <section className="h-screen w-full overflow-hidden relative animate-fade-in">
         <img
           src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=1600&h=900&fit=crop"
           alt="Umbra"
