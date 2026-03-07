@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ============================================
+     TYPOGRAPHY SCALE
+     ============================================ */
+  :root {
+    /* Font Families */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+
+    /* Typography Scale - Immersive Minimalism */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+    --text-6xl: 3.75rem;
+    --text-7xl: 4.5rem;
+    --text-8xl: 6rem;
+    --text-9xl: 8rem;
+
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Line Heights */
+    --leading-tight: 1.2;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+
+    /* Letter Spacing */
+    --tracking-tighter: -0.05em;
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+    --tracking-wider: 0.05em;
+    --tracking-widest: 0.1em;
+
+    /* ============================================
+       SPACING SCALE - NEGATIVE SPACE EMPHASIS
+       ============================================ */
+    --space-0: 0;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    --space-40: 10rem;
+
+    /* Page Spacing */
+    --page-padding: 2rem;
+    --page-padding-lg: 4rem;
+    --section-spacing: 7.5rem;
+    --section-spacing-lg: 15rem;
+
+    /* ============================================
+       COLOR PALETTE - MINIMALIST GRAYSCALE
+       ============================================ */
+    /* Whites & Backgrounds */
+    --color-white: hsl(0 0% 100%);
+    --color-bg-primary: hsl(0 0% 100%);
+    --color-bg-secondary: hsl(0 0% 98%);
+
+    /* Grays - Precise Hierarchy */
+    --color-gray-50: hsl(0 0% 97.5%);
+    --color-gray-100: hsl(0 0% 95%);
+    --color-gray-200: hsl(0 0% 90%);
+    --color-gray-300: hsl(0 0% 85%);
+    --color-gray-400: hsl(0 0% 75%);
+    --color-gray-500: hsl(0 0% 60%);
+    --color-gray-600: hsl(0 0% 45%);
+    --color-gray-700: hsl(0 0% 30%);
+    --color-gray-800: hsl(0 0% 12%);
+    --color-gray-900: hsl(0 0% 3.9%);
+
+    /* Semantic Colors */
+    --color-text-primary: hsl(0 0% 3.9%);
+    --color-text-secondary: hsl(0 0% 45%);
+    --color-text-tertiary: hsl(0 0% 60%);
+    --color-border: hsl(0 0% 89.8%);
+    --color-border-subtle: hsl(0 0% 95%);
+
+    /* ============================================
+       UI COMPONENT VARIABLES
+       ============================================ */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* ============================================
+     IMMERSIVE MINIMALISM SEMANTIC BASE STYLES
+     ============================================ */
+  body {
+    @apply font-sans bg-white text-gray-900 antialiased;
+    font-family: var(--font-sans);
+    line-height: var(--leading-normal);
+  }
+
+  /* Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: var(--weight-light);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--text-8xl);
+  }
+
+  h2 {
+    font-size: var(--text-6xl);
+  }
+
+  h3 {
+    font-size: var(--text-4xl);
+  }
+
+  h4 {
+    font-size: var(--text-2xl);
+  }
+
+  p {
+    font-weight: var(--weight-light);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Subtle Borders */
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+@layer components {
+  /* ============================================
+     IMMERSIVE MINIMALISM COMPONENT CLASSES
+     ============================================ */
+
+  /* Text Utilities - Semantic Typography */
+  .text-display-lg {
+    @apply text-8xl md:text-9xl font-light tracking-tight leading-none;
+  }
+
+  .text-display-md {
+    @apply text-6xl md:text-7xl font-light tracking-tight leading-tight;
+  }
+
+  .text-display-sm {
+    @apply text-4xl md:text-5xl font-light tracking-tight leading-tight;
+  }
+
+  .text-heading {
+    @apply text-2xl md:text-3xl font-light tracking-tight;
+  }
+
+  .text-subheading {
+    @apply text-lg md:text-xl font-light tracking-wide;
+  }
+
+  .text-body {
+    @apply text-lg font-light leading-relaxed;
+  }
+
+  .text-label {
+    @apply text-xs font-light tracking-widest uppercase;
+  }
+
+  /* Spacing Utilities - Negative Space Emphasis */
+  .section-spacing {
+    @apply py-32 md:py-40 lg:py-48;
+  }
+
+  .section-spacing-lg {
+    @apply py-40 md:py-48 lg:py-60;
+  }
+
+  .content-max-width {
+    @apply max-w-4xl;
+  }
+
+  .content-max-width-lg {
+    @apply max-w-6xl;
+  }
+
+  /* Visual Separation */
+  .divider-subtle {
+    @apply border-t border-gray-100;
+  }
+
+  .divider-standard {
+    @apply border-t border-gray-200;
+  }
+
+  /* Interactive States */
+  .transition-smooth {
+    @apply transition-all duration-500;
+  }
+
+  .transition-fast {
+    @apply transition-all duration-300;
+  }
+
+  .hover-opacity {
+    @apply hover:opacity-70 transition-opacity duration-300;
+  }
+
+  .hover-scale {
+    @apply hover:scale-105 transition-transform duration-500;
+  }
+
+  /* Grid & Layout */
+  .grid-portfolio {
+    @apply grid md:grid-cols-2 gap-16 items-center;
+  }
+
+  .grid-gallery {
+    @apply grid md:grid-cols-2 gap-12;
+  }
+
+  /* Image Utilities */
+  .image-frame {
+    @apply bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden;
+  }
+
+  .image-frame-landscape {
+    @apply bg-gray-200 aspect-[4/3] rounded-sm overflow-hidden;
+  }
+}
