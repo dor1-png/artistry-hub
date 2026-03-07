@@ -29,14 +29,7 @@ export default function Artist() {
   };
 
   return (
-    <>
-      <SEO
-        title="Artist Statement - ARTISTRY"
-        description="Meet the artist behind ARTISTRY. Explore artistic philosophy, creative journey, and inspirations spanning 10+ years of multidisciplinary contemporary art practice."
-        canonical="https://artistry.com/artist"
-        schema={artistSchema}
-      />
-      <div className="w-full">
+    <div className="w-full">
       {/* Hero Section */}
       <section className="min-h-[60vh] flex flex-col justify-center px-6 py-20 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
