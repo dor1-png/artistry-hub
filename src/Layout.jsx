@@ -8,7 +8,7 @@ export default function Layout({ children, currentPageName }) {
 
   const navItems = [
     { label: 'Home', id: 'hero', page: '/' },
-    { label: 'Gallery', id: 'gallery', page: '/' },
+    { label: 'Gallery', page: '/Gallery' },
     { label: 'Artist', page: '/Artist' },
     { label: 'About', id: 'about', page: '/' },
     { label: 'Contact', id: 'contact', page: '/' }
