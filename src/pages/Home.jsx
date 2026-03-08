@@ -286,7 +286,7 @@ export default function Home() {
       </section>
 
       {/* Footer/CTA - Start a Dialogue */}
-      <section id="contact" className="min-h-screen grid md:grid-cols-2 bg-white" style={{ paddingTop: '120px' }}>
+      <section id="contact" className="min-h-screen grid md:grid-cols-2 bg-white" style={{ paddingTop: '120px', scrollMarginTop: '80px' }}>
         {/* Left: Imagery */}
         <div className="bg-gray-200 aspect-auto md:aspect-auto min-h-screen md:min-h-auto overflow-hidden">
           <img
