@@ -357,6 +357,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Download Section */}
+      <section className="py-20 px-8 bg-white border-t border-gray-100">
+        <div className="max-w-md mx-auto text-center" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
+          <a
+            href="/CV"
+            className="inline-flex items-center gap-3 text-xs font-light tracking-[0.2em] uppercase text-gray-400 hover:text-gray-900 transition-colors duration-300 group"
+          >
+            <span className="w-8 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300" />
+            Download Portfolio / CV
+            <span className="w-8 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300" />
+          </a>
+        </div>
+      </section>
     </div>
   );
 }
