@@ -65,6 +65,9 @@ export default function Home() {
 
   return (
     <div className="w-full bg-white">
+      {activeProject && (
+        <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
+      )}
       {/* Hero Section - The Threshold */}
       <section id="hero" className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden">
         <div className="max-w-4xl text-center space-y-16">
