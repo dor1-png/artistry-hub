@@ -27,17 +27,6 @@ export default function Eclecticism() {
 
   return (
     <div className="w-full bg-white">
-      {/* Back Button */}
-      <div className="fixed top-24 left-8 z-40">
-        <button
-          onClick={() => navigate('/#portfolio')}
-          className="flex items-center gap-2 text-xs font-light tracking-widest text-gray-600 hover:text-gray-900 transition-colors uppercase"
-        >
-          <ArrowLeft size={16} />
-          Back
-        </button>
-      </div>
-
       {/* Hero Section */}
       <section className="h-screen w-full overflow-hidden relative animate-fade-in">
         <img
