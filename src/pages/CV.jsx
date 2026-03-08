@@ -84,6 +84,24 @@ export default function CV() {
       {/* CV Content */}
       <div className="max-w-4xl mx-auto px-8 py-24 md:py-32">
 
+        {/* Actions row */}
+        <div className="flex justify-between items-center mb-16">
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-xs font-light tracking-widest text-gray-400 hover:text-gray-900 transition-colors uppercase"
+          >
+            <ArrowLeft size={13} />
+            Back
+          </button>
+          <button
+            onClick={handleDownload}
+            className="flex items-center gap-2 text-xs font-light tracking-widest text-gray-400 hover:text-gray-900 transition-colors uppercase"
+          >
+            <Download size={13} />
+            Download
+          </button>
+        </div>
+
         {/* Header */}
         <div className="mb-32">
           <h1 className="text-6xl md:text-7xl font-light tracking-tight leading-none mb-6 animate-fade-in-up">
