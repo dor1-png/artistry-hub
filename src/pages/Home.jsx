@@ -302,6 +302,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      </div>{/* end white surface layer */}
     </div>
   );
 }
