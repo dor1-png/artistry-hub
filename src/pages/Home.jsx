@@ -185,97 +185,96 @@ export default function Home() {
           <h2 className="text-6xl font-light tracking-tight mb-32 text-gray-900 animate-fade-in-up">Work</h2>
 
           {/* Project 1 - Third Person */}
-          <button
-            onClick={() => navigate('/ThirdPerson')}
-            className="mb-48 w-full text-left group scroll-fade-in"
-          >
+          <div className="mb-48 w-full text-left group scroll-fade-in">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
-                className="transition-opacity duration-1200 animate-slide-in-left"
+                className="transition-opacity duration-1200 animate-slide-in-left cursor-pointer"
                 style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
+                onClick={() => setActiveProject(PROJECTS[0])}
               >
-                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden relative">
                   <img
                     src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=800&fit=crop"
                     alt="Third Person"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs tracking-widest uppercase opacity-0 hover:opacity-100 transition-opacity duration-300">View</span>
+                  </div>
                 </div>
               </div>
               <div
                 className="transition-opacity duration-1200 animate-slide-in-right animation-delay-100"
                 style={{ opacity: getOpacity(document.getElementById('project1')?.offsetTop || 0) }}
               >
-                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Third Person</h3>
+                <h3 className="text-5xl font-light tracking-tight mb-6 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => navigate('/ThirdPerson')}>Third Person</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
                   A contemporary circus development exploring the intersection of movement and physical limit. Originally performed at the Train Theater, this work investigates the precise boundary between technical virtuosity and embodied presence.
                 </p>
                 <p className="text-sm font-light text-gray-500 tracking-widest">2024</p>
               </div>
             </div>
-          </button>
+          </div>
 
           {/* Project 2 - Eclecticism */}
-          <button
-            onClick={() => navigate('/Eclecticism')}
-            className="mb-48 w-full text-left group scroll-fade-in"
-          >
+          <div className="mb-48 w-full text-left group scroll-fade-in">
             <div className="grid md:grid-cols-2 gap-16 items-center md:direction-rtl">
               <div
-                className="transition-opacity duration-1200 md:order-2 animate-slide-in-right"
+                className="transition-opacity duration-1200 md:order-2 animate-slide-in-right cursor-pointer"
                 style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
+                onClick={() => setActiveProject(PROJECTS[1])}
               >
-                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden relative">
                   <img
                     src="https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=600&h=800&fit=crop"
                     alt="Eclecticism"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300" />
                 </div>
               </div>
               <div
                 className="transition-opacity duration-1200 md:order-1 animate-slide-in-left animation-delay-100"
                 style={{ opacity: getOpacity(document.getElementById('project2')?.offsetTop || 0) }}
               >
-                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Eclecticism</h3>
+                <h3 className="text-5xl font-light tracking-tight mb-6 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => navigate('/Eclecticism')}>Eclecticism</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
                   A physical theatre performance under the artistic direction of Eden Weiss, focusing on the precision of the performer's body as both instrument and subject. A collision of circus vocabulary with theatrical narrative.
                 </p>
                 <p className="text-sm font-light text-gray-500 tracking-widest">2025</p>
               </div>
             </div>
-          </button>
+          </div>
 
           {/* Project 3 - Umbra */}
-          <button
-            onClick={() => navigate('/Umbra')}
-            className="mb-48 w-full text-left group scroll-fade-in"
-          >
+          <div className="mb-48 w-full text-left group scroll-fade-in">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div
-                className="transition-opacity duration-1200 animate-slide-in-left"
+                className="transition-opacity duration-1200 animate-slide-in-left cursor-pointer"
                 style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
+                onClick={() => setActiveProject(PROJECTS[2])}
               >
-                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden">
+                <div className="bg-gray-200 aspect-[3/4] rounded-sm overflow-hidden relative">
                   <img
                     src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=600&h=800&fit=crop"
                     alt="Umbra"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors duration-300" />
                 </div>
               </div>
               <div
                 className="transition-opacity duration-1200 animate-slide-in-right animation-delay-100"
                 style={{ opacity: getOpacity(document.getElementById('project3')?.offsetTop || 0) }}
               >
-                <h3 className="text-5xl font-light tracking-tight mb-6 group-hover:opacity-70 transition-opacity">Umbra</h3>
+                <h3 className="text-5xl font-light tracking-tight mb-6 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => navigate('/Umbra')}>Umbra</h3>
                 <p className="text-lg font-light text-gray-600 leading-relaxed mb-8">
                   A multidisciplinary ensemble performance exploring the boundary between presence and absence through shadow and light. The performer becomes silhouette, abstraction, and essence.
                 </p>
                 <p className="text-sm font-light text-gray-500 tracking-widest">2025</p>
               </div>
             </div>
-          </button>
+          </div>
 
           {/* Project 4 - Gray Elephant */}
           <div className="w-full text-left group scroll-fade-in">
