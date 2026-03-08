@@ -79,42 +79,54 @@ export default function Home() {
           style={{ opacity: Math.max(0.4, 1 - scrollY / 800) }}
         />
 
-        {/* Title — positioned in the sky (top area) */}
+        {/* All text pinned to the sky area — top 40% of viewport */}
         <div
-          className="relative z-10 flex flex-col items-center justify-start pt-32 md:pt-36 px-8 min-h-screen"
+          className="absolute inset-0 z-10 flex flex-col items-center"
           style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}
         >
-          <div className="text-center space-y-4 animate-fade-in-up">
-            <h1 className="text-7xl md:text-9xl font-light tracking-tight leading-none text-gray-800">
-              DOR
-              <br />
-              REGEV
-            </h1>
-            <p className="text-lg md:text-xl font-light tracking-[0.2em] text-gray-600 animate-fade-in-up animation-delay-100">
-              Multidisciplinary Artist
-            </p>
-            <div className="flex justify-center gap-4 text-xs font-light tracking-widest text-gray-500 animate-fade-in-up animation-delay-200">
-              <span>Theatre</span>
-              <span>•</span>
-              <span>Contemporary Circus</span>
-              <span>•</span>
-              <span>Performance</span>
-            </div>
-          </div>
+          {/* DOR REGEV — at ~20vh */}
+          <h1
+            className="absolute text-4xl md:text-5xl tracking-[0.35em] uppercase text-gray-700 animate-fade-in-up"
+            style={{ top: '20vh', fontWeight: 200, letterSpacing: '0.35em' }}
+          >
+            DOR REGEV
+          </h1>
 
+          {/* ENTER THE PROCESS button — at ~30vh */}
           <button
             onClick={() => {
               const el = document.getElementById('pov');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="absolute bottom-16 border border-gray-700 px-12 py-4 text-xs font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300 text-gray-700"
+            className="absolute border border-gray-600 px-10 py-3 text-xs font-light tracking-widest text-gray-700 hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-100"
+            style={{ top: '30vh' }}
           >
             ENTER THE PROCESS
           </button>
 
+          {/* Multidisciplinary Artist — at ~38vh */}
+          <p
+            className="absolute text-sm font-light tracking-[0.18em] text-gray-600 animate-fade-in-up animation-delay-200"
+            style={{ top: '38vh' }}
+          >
+            Multidisciplinary Artist
+          </p>
+
+          {/* Disciplines — at ~44vh */}
+          <div
+            className="absolute flex gap-3 text-xs font-light tracking-widest text-gray-500 animate-fade-in-up animation-delay-300"
+            style={{ top: '44vh' }}
+          >
+            <span>Theatre</span>
+            <span>•</span>
+            <span>Contemporary Circus</span>
+            <span>•</span>
+            <span>Performance</span>
+          </div>
+
           {/* Scroll Indicator */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-            <ChevronDown size={20} />
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+            <ChevronDown size={18} />
           </div>
         </div>
       </section>
