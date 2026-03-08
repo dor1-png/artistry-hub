@@ -109,6 +109,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* White surface that layers over the sticky hero as user scrolls */}
+      <div style={{ position: 'relative', zIndex: 10, background: '#fff' }}>
+
       {/* POV Section - The Statement */}
       <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
         <div className="max-w-7xl mx-auto px-8">
