@@ -77,8 +77,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {/* Left: Image - Height matches text block */}
             <div
-              className="bg-gray-900 rounded-sm overflow-hidden transition-opacity duration-1200 h-full animate-slide-in-left"
-              style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 0) }}
+              className="bg-gray-900 rounded-sm overflow-hidden h-full animate-slide-in-left"
             >
               <img
                 src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=600&h=800&fit=crop&q=80&blend=https://images.unsplash.com/photo-1549887534-7ebf0ddc0146?w=600&h=800&fit=crop&blend_mode=multiply"
