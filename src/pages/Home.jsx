@@ -43,7 +43,13 @@ export default function Home() {
               </div>
             </div>
 
-            <button className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300">
+            <button
+              onClick={() => {
+                const el = document.getElementById('pov');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300"
+            >
               ENTER THE PROCESS
             </button>
           </div>
