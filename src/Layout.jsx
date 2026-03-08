@@ -1,52 +1,85 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 export default function Layout({ children, currentPageName }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState(null);
+  const [fadeKey, setFadeKey] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const isHome = currentPageName === 'Home';
+  const isCV = currentPageName === 'CV';
 
+  // Track scroll position for header style + active section
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      // Determine active section on home page
+      if (isHome) {
+        const sections = ['portfolio', 'pov', 'contact'];
+        let current = null;
+        for (const id of sections) {
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= 120) current = id;
+          }
+        }
+        setActiveSection(current);
+      }
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isHome]);
 
-  // Close mobile menu on route change
+  // Trigger fade-in on page change & scroll to top instantly
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setFadeKey(k => k + 1);
+    setActiveSection(null);
     setIsMenuOpen(false);
-  }, [currentPageName]);
+  }, [location.pathname]);
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (sectionId) => {
     setIsMenuOpen(false);
     if (!isHome) {
+      // Cross-fade: navigate then instant-top the new page (handled by useEffect above)
       navigate(createPageUrl('Home'));
-      // slight delay to allow page to mount before scrolling
+      // After navigation, scroll to section with a brief delay
       setTimeout(() => {
-        const el = document.querySelector(href);
+        const el = document.getElementById(sectionId);
         if (el) el.scrollIntoView({ behavior: 'smooth' });
-      }, 300);
+      }, 350);
     } else {
-      const el = document.querySelector(href);
+      const el = document.getElementById(sectionId);
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const goHome = () => {
     setIsMenuOpen(false);
-    navigate(createPageUrl('Home'));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!isHome) {
+      navigate(createPageUrl('Home'));
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const navItems = [
-    { label: 'Work', href: '#portfolio' },
-    { label: 'POV', href: '#pov' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Work', sectionId: 'portfolio' },
+    { label: 'POV', sectionId: 'pov' },
+    { label: 'Contact', sectionId: 'contact' },
   ];
+
+  const isNavActive = (sectionId) => {
+    if (!isHome) return false;
+    return activeSection === sectionId;
+  };
 
   return (
     <div className="bg-white text-gray-900">
@@ -54,7 +87,7 @@ export default function Layout({ children, currentPageName }) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-white/96 backdrop-blur-md border-b border-gray-100 shadow-none'
+            ? 'bg-white/96 backdrop-blur-md border-b border-gray-100'
             : 'bg-transparent border-b border-transparent'
         }`}
       >
@@ -63,31 +96,46 @@ export default function Layout({ children, currentPageName }) {
           {/* Logo — Home button */}
           <button
             onClick={goHome}
-            className={`text-sm font-light tracking-[0.2em] uppercase transition-opacity duration-300 hover:opacity-60 ${
-              scrolled ? 'text-gray-900' : 'text-gray-900'
-            }`}
+            className="text-sm font-light tracking-[0.2em] uppercase transition-opacity duration-300 hover:opacity-60 text-gray-900"
           >
             HOME
           </button>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
-            {navItems.map(item => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.href)}
-                className="relative text-xs font-light tracking-[0.18em] uppercase text-gray-800 group transition-opacity duration-300 hover:opacity-60"
-              >
-                {item.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gray-800 transition-all duration-300 group-hover:w-full" />
-              </button>
-            ))}
+            {navItems.map(item => {
+              const active = isNavActive(item.sectionId);
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => scrollToSection(item.sectionId)}
+                  className={`relative text-xs font-light tracking-[0.18em] uppercase transition-all duration-300 group ${
+                    active ? 'text-gray-900 opacity-100' : 'text-gray-800 hover:opacity-60'
+                  }`}
+                >
+                  {item.label}
+                  {/* Active underline */}
+                  <span
+                    className={`absolute -bottom-0.5 left-0 h-px bg-gray-800 transition-all duration-300 ${
+                      active ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </button>
+              );
+            })}
             <Link
               to={createPageUrl('CV')}
-              className="relative text-xs font-light tracking-[0.18em] uppercase text-gray-800 group transition-opacity duration-300 hover:opacity-60"
+              onClick={() => {}} // instant-top handled by useEffect
+              className={`relative text-xs font-light tracking-[0.18em] uppercase transition-all duration-300 group ${
+                isCV ? 'text-gray-900 opacity-100' : 'text-gray-800 hover:opacity-60'
+              }`}
             >
               CV
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gray-800 transition-all duration-300 group-hover:w-full" />
+              <span
+                className={`absolute -bottom-0.5 left-0 h-px bg-gray-800 transition-all duration-300 ${
+                  isCV ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}
+              />
             </Link>
           </div>
 
@@ -111,7 +159,7 @@ export default function Layout({ children, currentPageName }) {
             {navItems.map(item => (
               <button
                 key={item.label}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.sectionId)}
                 className="text-left text-xs font-light tracking-[0.18em] uppercase text-gray-800 py-3 border-b border-gray-50 hover:opacity-60 transition-opacity"
               >
                 {item.label}
@@ -128,8 +176,12 @@ export default function Layout({ children, currentPageName }) {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="pt-0">
+      {/* Main Content — soft cross-fade on page change */}
+      <main
+        key={fadeKey}
+        className="pt-0"
+        style={{ animation: 'pageFadeIn 0.4s ease-out both' }}
+      >
         {children}
       </main>
 
@@ -176,6 +228,13 @@ export default function Layout({ children, currentPageName }) {
           <p>© 2026. All rights reserved.</p>
         </div>
       </footer>
+
+      <style>{`
+        @keyframes pageFadeIn {
+          from { opacity: 0; transform: translateY(6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </div>
   );
 }
