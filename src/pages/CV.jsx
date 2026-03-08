@@ -96,17 +96,29 @@ export default function CV() {
         </div>
 
         {/* Header */}
-        <div className="mb-32">
-          <h1 className="text-6xl md:text-7xl font-light tracking-tight leading-none mb-6 animate-fade-in-up">
-            Dor Regev
-          </h1>
-          <p className="text-lg font-light text-gray-500 tracking-wide animate-fade-in-up animation-delay-100">
-            Multidisciplinary Artist — Theatre · Contemporary Circus · Performance
-          </p>
-          <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-12 text-xs font-light text-gray-400 tracking-widest animate-fade-in-up animation-delay-200">
-            <span>hello@dorregev.com</span>
-            <span>+972 (0) 54 123 4567</span>
-            <span>Tel Aviv, Israel</span>
+        <div className="mb-32 flex items-start justify-between gap-12">
+          <div className="flex-1">
+            <h1 className="text-6xl md:text-7xl font-light tracking-tight leading-none mb-6 animate-fade-in-up">
+              Dor Regev
+            </h1>
+            <p className="text-lg font-light text-gray-500 tracking-wide animate-fade-in-up animation-delay-100">
+              Multidisciplinary Artist — Theatre · Contemporary Circus · Performance
+            </p>
+            <div className="mt-8 flex flex-col md:flex-row gap-4 md:gap-12 text-xs font-light text-gray-400 tracking-widest animate-fade-in-up animation-delay-200">
+              <span>hello@dorregev.com</span>
+              <span>+972 (0) 54 123 4567</span>
+              <span>Tel Aviv, Israel</span>
+            </div>
+          </div>
+
+          {/* Portrait */}
+          <div className="shrink-0 w-24 h-24 md:w-32 md:h-32 bg-gray-100 rounded-sm overflow-hidden animate-fade-in animation-delay-200">
+            {/* Replace the src below with your actual photo URL */}
+            <img
+              src="https://placehold.co/128x128/e5e5e5/999999?text=Photo"
+              alt="Dor Regev"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
