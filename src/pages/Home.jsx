@@ -180,7 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-      <BoldGallery />
+      <BoldGallery onProjectClick={(p) => setActiveProject(PROJECTS.find(r => r.id === p.id) || p)} />
 
       {/* 2026: The Current Dialogue Section */}
       <section className="py-32 px-8 bg-gray-50" style={{ paddingTop: '160px', paddingBottom: '160px' }}>
