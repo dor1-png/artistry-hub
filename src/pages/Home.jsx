@@ -95,7 +95,7 @@ export default function Home() {
               {/* The Discipline */}
               <div
                 className="space-y-3 transition-opacity duration-1200"
-                style={{ opacity: getOpacity(document.getElementById('pov')?.offsetTop || 200) }}
+
               >
                 <h3 className="text-xs font-light tracking-[0.2em] text-gray-500 uppercase">
                   The Discipline
