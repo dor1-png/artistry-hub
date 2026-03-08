@@ -138,6 +138,15 @@ export default function Home() {
           }}
         />
 
+      {/* Placeholder image to preview the dark-to-light effect */}
+      <div style={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
+        <img
+          src="https://images.unsplash.com/photo-1554244933-d876deb6b2ff?w=1920&h=1080&fit=crop&q=90"
+          alt="Placeholder"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </div>
+
       {/* POV Section - The Statement */}
       <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
         <div className="max-w-7xl mx-auto px-8">
