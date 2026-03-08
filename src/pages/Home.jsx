@@ -3,9 +3,52 @@ import { ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ProjectModal from '../components/ProjectModal';
 
+const PROJECTS = [
+  {
+    id: 'third-person',
+    title: 'Third Person',
+    year: '2024',
+    page: 'ThirdPerson',
+    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=800&fit=crop',
+    description: 'A contemporary circus development exploring the intersection of movement and physical limit. Originally performed at the Train Theater, this work investigates the precise boundary between technical virtuosity and embodied presence.',
+    gallery: [
+      'https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=400&h=400&fit=crop',
+    ],
+    videoUrl: null,
+  },
+  {
+    id: 'eclecticism',
+    title: 'Eclecticism',
+    year: '2025',
+    page: 'Eclecticism',
+    image: 'https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=600&h=800&fit=crop',
+    description: 'A physical theatre performance under the artistic direction of Eden Weiss, focusing on the precision of the performer\'s body as both instrument and subject. A collision of circus vocabulary with theatrical narrative.',
+    gallery: [
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=400&h=400&fit=crop',
+    ],
+    videoUrl: null,
+  },
+  {
+    id: 'umbra',
+    title: 'Umbra',
+    year: '2025',
+    page: 'Umbra',
+    image: 'https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=600&h=800&fit=crop',
+    description: 'A multidisciplinary ensemble performance exploring the boundary between presence and absence through shadow and light. The performer becomes silhouette, abstraction, and essence.',
+    gallery: [
+      'https://images.unsplash.com/photo-1504475077527-e7e5a8b18e20?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop',
+    ],
+    videoUrl: null,
+  },
+];
+
 export default function Home() {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
+  const [activeProject, setActiveProject] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
