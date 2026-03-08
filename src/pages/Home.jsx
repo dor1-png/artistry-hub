@@ -82,13 +82,13 @@ export default function Home() {
           {/* Subtle dark veil */}
           <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.38)' }} />
 
-          {/* Centered identity */}
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
+          {/* Title — top 15% of viewport, cohesive with nav */}
+          <div style={{ position: 'absolute', top: '15%', left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.9rem' }}>
             <h1
               style={{
-                fontSize: 'clamp(4rem, 12vw, 10rem)',
+                fontSize: 'clamp(2rem, 5vw, 5.5rem)',
                 fontWeight: 300,
-                letterSpacing: '0.25em',
+                letterSpacing: '0.28em',
                 color: '#ffffff',
                 lineHeight: 1,
                 textAlign: 'center',
@@ -97,7 +97,7 @@ export default function Home() {
             >
               DOR REGEV
             </h1>
-            <p style={{ fontSize: '0.8rem', fontWeight: 300, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', margin: 0 }}>
+            <p style={{ fontSize: '0.7rem', fontWeight: 300, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', margin: 0 }}>
               Theatre · Contemporary Circus · Performance
             </p>
           </div>
