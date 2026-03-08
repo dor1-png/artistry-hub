@@ -22,7 +22,7 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto py-8"
       style={{ animation: 'pageFadeIn 0.35s ease-out both' }}
