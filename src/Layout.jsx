@@ -32,8 +32,8 @@ export default function Layout({ children, currentPageName }) {
           </h1>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-12 text-xs font-light tracking-widest">
-            {navItems.map(item => (
+          <div className="hidden md:flex gap-12 text-xs font-light tracking-widest items-center">
+            {isHome && navItems.map(item => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
@@ -42,6 +42,12 @@ export default function Layout({ children, currentPageName }) {
                 {item.label}
               </button>
             ))}
+            <Link
+              to={createPageUrl('CV')}
+              className="transition-colors duration-300 hover:text-gray-600 uppercase"
+            >
+              CV
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
