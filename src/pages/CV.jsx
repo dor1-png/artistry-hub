@@ -85,14 +85,7 @@ export default function CV() {
       <div className="max-w-4xl mx-auto px-8 py-24 md:py-32">
 
         {/* Actions row */}
-        <div className="flex justify-between items-center mb-16">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex items-center gap-2 text-xs font-light tracking-widest text-gray-400 hover:text-gray-900 transition-colors uppercase"
-          >
-            <ArrowLeft size={13} />
-            Back
-          </button>
+        <div className="flex justify-end items-center mb-16">
           <button
             onClick={handleDownload}
             className="flex items-center gap-2 text-xs font-light tracking-widest text-gray-400 hover:text-gray-900 transition-colors uppercase"
