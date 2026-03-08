@@ -91,6 +91,7 @@ export default function ProjectModal({ project, onClose }) {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
