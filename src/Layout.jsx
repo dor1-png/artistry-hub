@@ -67,7 +67,7 @@ export default function Layout({ children, currentPageName }) {
               scrolled ? 'text-gray-900' : 'text-gray-900'
             }`}
           >
-            DOR REGEV
+            HOME
           </button>
 
           {/* Desktop Nav */}
