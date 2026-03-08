@@ -69,42 +69,52 @@ export default function Home() {
       {activeProject && (
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       )}
-      {/* Hero Section - The Threshold */}
-      <section id="hero" className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden">
-        <div className="max-w-4xl text-center space-y-16">
-          <div className="space-y-12" style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}>
-            <div className="space-y-6 animate-fade-in-up">
-              <h1 className="text-8xl md:text-9xl font-light tracking-tight leading-none">
-                DOR
-                <br />
-                REGEV
-              </h1>
-              <p className="text-xl md:text-2xl font-light tracking-wide text-gray-600 mt-8 animate-fade-in-up animation-delay-100">
-                Multidisciplinary Artist
-              </p>
-              <div className="flex justify-center gap-4 text-sm font-light tracking-widest text-gray-500 mt-6 animate-fade-in-up animation-delay-200">
-                <span>Theatre</span>
-                <span>•</span>
-                <span>Contemporary Circus</span>
-                <span>•</span>
-                <span>Performance</span>
-              </div>
-            </div>
+      {/* Hero Section - Full Cover */}
+      <section id="hero" className="relative min-h-screen overflow-hidden">
+        {/* Background Image */}
+        <img
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/69aba9d37aecb9090ac01315/a1b79a5c1_2.jpg"
+          alt="Dor Regev"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: Math.max(0.4, 1 - scrollY / 800) }}
+        />
 
-            <button
-              onClick={() => {
-                const el = document.getElementById('pov');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300"
-            >
-              ENTER THE PROCESS
-            </button>
+        {/* Title — positioned in the sky (top area) */}
+        <div
+          className="relative z-10 flex flex-col items-center justify-start pt-32 md:pt-36 px-8 min-h-screen"
+          style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}
+        >
+          <div className="text-center space-y-4 animate-fade-in-up">
+            <h1 className="text-7xl md:text-9xl font-light tracking-tight leading-none text-gray-800">
+              DOR
+              <br />
+              REGEV
+            </h1>
+            <p className="text-lg md:text-xl font-light tracking-[0.2em] text-gray-600 animate-fade-in-up animation-delay-100">
+              Multidisciplinary Artist
+            </p>
+            <div className="flex justify-center gap-4 text-xs font-light tracking-widest text-gray-500 animate-fade-in-up animation-delay-200">
+              <span>Theatre</span>
+              <span>•</span>
+              <span>Contemporary Circus</span>
+              <span>•</span>
+              <span>Performance</span>
+            </div>
           </div>
 
+          <button
+            onClick={() => {
+              const el = document.getElementById('pov');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="absolute bottom-16 border border-gray-700 px-12 py-4 text-xs font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300 text-gray-700"
+          >
+            ENTER THE PROCESS
+          </button>
+
           {/* Scroll Indicator */}
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
-            <ChevronDown size={24} />
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+            <ChevronDown size={20} />
           </div>
         </div>
       </section>

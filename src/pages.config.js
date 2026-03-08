@@ -53,9 +53,9 @@ import CV from './pages/CV';
 import Contact from './pages/Contact';
 import Eclecticism from './pages/Eclecticism';
 import Gallery from './pages/Gallery';
-import Home from './pages/Home';
 import ThirdPerson from './pages/ThirdPerson';
 import Umbra from './pages/Umbra';
+import Home from './pages/Home';
 import __Layout from './Layout.jsx';
 
 
@@ -66,9 +66,9 @@ export const PAGES = {
     "Contact": Contact,
     "Eclecticism": Eclecticism,
     "Gallery": Gallery,
-    "Home": Home,
     "ThirdPerson": ThirdPerson,
     "Umbra": Umbra,
+    "Home": Home,
 }
 
 export const pagesConfig = {
