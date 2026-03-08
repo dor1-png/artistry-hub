@@ -163,7 +163,7 @@ export default function Home() {
           {/* Active Project 2 */}
           <div
             className="animate-slide-in-right animation-delay-100"
-            style={{ opacity: getOpacity(document.getElementById('active2')?.offsetTop || 0) }}
+
           >
             <h3 className="text-4xl font-light tracking-tight mb-6">"Go Explain" at Tzavta Theater</h3>
             <p className="text-lg font-light text-gray-600 leading-relaxed max-w-3xl">
