@@ -23,7 +23,7 @@ export default function ProjectModal({ project, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center"
+      className="fixed inset-0 z-[100] flex items-start justify-center overflow-y-auto py-8"
       style={{ animation: 'pageFadeIn 0.35s ease-out both' }}
     >
       {/* Backdrop */}
