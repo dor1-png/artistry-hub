@@ -33,7 +33,7 @@ export default function ProjectModal({ project, onClose }) {
       />
 
       {/* Panel */}
-      <div className="relative z-10 bg-white w-full max-w-5xl max-h-[90vh] overflow-y-auto mx-4 rounded-sm flex flex-col md:flex-row">
+      <div className="relative z-10 bg-white w-full max-w-5xl mx-4 rounded-sm flex flex-col md:flex-row">
 
         {/* Close */}
         <button
