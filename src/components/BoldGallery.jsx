@@ -28,13 +28,11 @@ const projects = [
   },
 ];
 
-export default function BoldGallery() {
+export default function BoldGallery({ onProjectClick }) {
   const [hovered, setHovered] = useState(null);
 
   const handleClick = (project) => {
-    if (project.page) {
-      window.open(createPageUrl(project.page), '_blank');
-    }
+    if (onProjectClick) onProjectClick(project);
   };
 
   return (
