@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ProjectModal from '../components/ProjectModal';
+import BoldGallery from '../components/BoldGallery';
 
 const PROJECTS = [
   {
