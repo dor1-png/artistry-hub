@@ -93,20 +93,12 @@ export default function Layout({ children, currentPageName }) {
       >
         <nav className="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
 
-          {/* Logo — Home button (left placeholder for balance) */}
+          {/* Logo — Home button */}
           <button
             onClick={goHome}
-            className="text-sm font-light tracking-[0.2em] uppercase transition-opacity duration-300 hover:opacity-60 text-gray-900 md:invisible"
+            className="text-sm font-light tracking-[0.2em] uppercase transition-opacity duration-300 hover:opacity-60 text-gray-900"
           >
-            DR
-          </button>
-
-          {/* Center: DOR REGEV brand */}
-          <button
-            onClick={goHome}
-            className="absolute left-1/2 -translate-x-1/2 text-sm font-light tracking-[0.25em] uppercase transition-opacity duration-300 hover:opacity-60 text-gray-900"
-          >
-            DOR REGEV
+            HOME
           </button>
 
           {/* Desktop Nav */}
