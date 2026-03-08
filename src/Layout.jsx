@@ -227,6 +227,32 @@ export default function Layout({ children, currentPageName }) {
 
           <p>© 2026. All rights reserved.</p>
         </div>
+
+        {/* Newsletter */}
+        <div className="max-w-7xl mx-auto mt-10 pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-xs font-light text-gray-400 tracking-widest uppercase">Stay informed — festivals & new works</p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              e.target.reset();
+              e.target.querySelector('input').placeholder = 'Thank you.';
+            }}
+            className="flex items-center gap-0 border-b border-gray-300 pb-1"
+          >
+            <input
+              type="email"
+              required
+              placeholder="your@email.com"
+              className="bg-transparent text-xs font-light text-gray-600 tracking-widest placeholder-gray-300 focus:outline-none w-48"
+            />
+            <button
+              type="submit"
+              className="text-xs font-light tracking-widest text-gray-400 hover:text-gray-900 transition-colors duration-300 ml-4 uppercase"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
       </footer>
 
       <style>{`
