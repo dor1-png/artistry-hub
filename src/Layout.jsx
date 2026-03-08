@@ -18,6 +18,8 @@ export default function Layout({ children, currentPageName }) {
     }
   };
 
+  const isHome = currentPageName === 'Home';
+
   return (
     <div className="bg-white text-gray-900">
       {/* Header */}
