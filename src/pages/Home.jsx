@@ -56,7 +56,7 @@ export default function Home() {
       </section>
 
       {/* POV Section - The Statement */}
-      <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+      <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {/* Left: Image - Height matches text block */}
