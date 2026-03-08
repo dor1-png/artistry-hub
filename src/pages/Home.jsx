@@ -303,7 +303,7 @@ export default function Home() {
         </div>
       </section>
 
-      </div>{/* end white surface layer */}
+      </div>
     </div>
   );
 }
