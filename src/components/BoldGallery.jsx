@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createPageUrl } from '@/utils';
+// createPageUrl no longer needed here
 
 const projects = [
   {
