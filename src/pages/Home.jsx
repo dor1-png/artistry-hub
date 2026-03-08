@@ -48,35 +48,7 @@ const PROJECTS = [
 
 export default function Home() {
   const navigate = useNavigate();
-  const [scrollY, setScrollY] = useState(0);
   const [activeProject, setActiveProject] = useState(null);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const getOpacity = (elementOffsetTop) => {
-    const windowHeight = window.innerHeight;
-    const scrollPosition = scrollY + windowHeight;
-    const distance = scrollPosition - elementOffsetTop;
-    return Math.min(distance / 400, 1);
-  };
-
-  // Dark-to-Light: overlay is fully black at rest, fades to transparent as user scrolls.
-  // Maps scrollY 0 → 100vh to overlay opacity 1 → 0.
-  const darkOverlayOpacity = (() => {
-    const wh = typeof window !== 'undefined' ? window.innerHeight : 800;
-    const start = 0;
-    const end = wh;
-    if (scrollY <= start) return 1;
-    if (scrollY >= end) return 0;
-    const t = (scrollY - start) / (end - start);
-    // Ease-in-out cubic
-    const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    return 1 - eased;
-  })();
 
   return (
     <div className="w-full bg-white">
