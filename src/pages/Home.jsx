@@ -79,49 +79,31 @@ export default function Home() {
           style={{ opacity: Math.max(0.4, 1 - scrollY / 800) }}
         />
 
-        {/* All text pinned to the sky area — top 40% of viewport */}
+        {/* Horizon-Cluster — tight group anchored at 15vh */}
         <div
           className="absolute inset-0 z-10 flex flex-col items-center"
           style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}
         >
-          {/* DOR REGEV — at ~20vh */}
-          <h1
-            className="absolute text-4xl md:text-5xl tracking-[0.35em] uppercase text-gray-700 animate-fade-in-up"
-            style={{ top: '20vh', fontWeight: 200, letterSpacing: '0.35em' }}
-          >
-            DOR REGEV
-          </h1>
-
-          {/* ENTER THE PROCESS button — at ~30vh */}
-          <button
-            onClick={() => {
-              const el = document.getElementById('pov');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="absolute border border-gray-600 px-10 py-3 text-xs font-light tracking-widest text-gray-700 hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-100"
-            style={{ top: '30vh' }}
-          >
-            ENTER THE PROCESS
-          </button>
-
-          {/* Multidisciplinary Artist — at ~38vh */}
-          <p
-            className="absolute text-sm font-light tracking-[0.18em] text-gray-600 animate-fade-in-up animation-delay-200"
-            style={{ top: '38vh' }}
-          >
-            Multidisciplinary Artist
-          </p>
-
-          {/* Disciplines — at ~44vh */}
           <div
-            className="absolute flex gap-3 text-xs font-light tracking-widest text-gray-500 animate-fade-in-up animation-delay-300"
-            style={{ top: '44vh' }}
+            className="absolute flex flex-col items-center gap-2 animate-fade-in-up"
+            style={{ top: '15vh' }}
           >
-            <span>Theatre</span>
-            <span>•</span>
-            <span>Contemporary Circus</span>
-            <span>•</span>
-            <span>Performance</span>
+            <h1
+              className="text-4xl md:text-5xl tracking-[0.4em] uppercase text-gray-700"
+              style={{ fontWeight: 200 }}
+            >
+              DOR REGEV
+            </h1>
+            <p className="text-xs tracking-[0.22em] text-gray-500" style={{ fontWeight: 300 }}>
+              Multidisciplinary Artist
+            </p>
+            <div className="flex gap-3 text-[10px] tracking-widest text-gray-400" style={{ fontWeight: 300 }}>
+              <span>Theatre</span>
+              <span>•</span>
+              <span>Contemporary Circus</span>
+              <span>•</span>
+              <span>Performance</span>
+            </div>
           </div>
 
           {/* Scroll Indicator */}
