@@ -64,12 +64,12 @@ export default function Home() {
     return Math.min(distance / 400, 1);
   };
 
-  // Dark-to-Light: overlay fades from black (1) to transparent (0) exactly as hero exits.
-  // Hero unsticks at scrollY = 1vh and is fully off-screen at scrollY = 2vh.
+  // Dark-to-Light: overlay is fully black at rest, fades to transparent as user scrolls.
+  // Maps scrollY 0 → 100vh to overlay opacity 1 → 0.
   const darkOverlayOpacity = (() => {
     const wh = typeof window !== 'undefined' ? window.innerHeight : 800;
-    const start = wh;       // hero starts exiting
-    const end = wh * 2;     // hero fully gone, content fully revealed
+    const start = 0;
+    const end = wh;
     if (scrollY <= start) return 1;
     if (scrollY >= end) return 0;
     const t = (scrollY - start) / (end - start);
