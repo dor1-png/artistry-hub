@@ -69,48 +69,45 @@ export default function Home() {
       {activeProject && (
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       )}
-      {/* Hero Section - Cinematic Sticky Stage */}
-      <div style={{ height: '200vh' }}>
-        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
-          {/* Full-screen image */}
-          <img
-            src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=1920&h=1080&fit=crop&q=95"
-            alt="Dor Regev"
-            className="w-full h-full object-cover"
-          />
+      {/* Hero Section - The Threshold */}
+      <section id="hero" className="min-h-screen flex flex-col justify-center items-center px-8 py-32 relative overflow-hidden">
+        <div className="max-w-4xl text-center space-y-16">
+          <div className="space-y-12" style={{ opacity: Math.max(0.3, 1 - scrollY / 500) }}>
+            <div className="space-y-6 animate-fade-in-up">
+              <h1 className="text-8xl md:text-9xl font-light tracking-tight leading-none">
+                DOR
+                <br />
+                REGEV
+              </h1>
+              <p className="text-xl md:text-2xl font-light tracking-wide text-gray-600 mt-8 animate-fade-in-up animation-delay-100">
+                Multidisciplinary Artist
+              </p>
+              <div className="flex justify-center gap-4 text-sm font-light tracking-widest text-gray-500 mt-6 animate-fade-in-up animation-delay-200">
+                <span>Theatre</span>
+                <span>•</span>
+                <span>Contemporary Circus</span>
+                <span>•</span>
+                <span>Performance</span>
+              </div>
+            </div>
 
-          {/* Subtle dark veil */}
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.38)' }} />
-
-          {/* Centered identity */}
-          <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
-            <h1
-              style={{
-                fontSize: 'clamp(4rem, 12vw, 10rem)',
-                fontWeight: 300,
-                letterSpacing: '0.25em',
-                color: '#ffffff',
-                lineHeight: 1,
-                textAlign: 'center',
-                margin: 0,
+            <button
+              onClick={() => {
+                const el = document.getElementById('pov');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
+              className="inline-block mt-12 border border-gray-800 px-12 py-4 text-sm font-light tracking-widest hover:bg-gray-800 hover:text-white transition-all duration-500 animate-fade-in-up animation-delay-300"
             >
-              DOR REGEV
-            </h1>
-            <p style={{ fontSize: '0.8rem', fontWeight: 300, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.65)', textTransform: 'uppercase', margin: 0 }}>
-              Theatre · Contemporary Circus · Performance
-            </p>
+              ENTER THE PROCESS
+            </button>
           </div>
 
-          {/* Scroll cue */}
-          <div style={{ position: 'absolute', bottom: '3rem', left: '50%', transform: 'translateX(-50%)' }} className="animate-bounce">
-            <ChevronDown size={22} color="rgba(255,255,255,0.5)" />
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <ChevronDown size={24} />
           </div>
         </div>
-      </div>
-
-      {/* White surface that layers over the sticky hero as user scrolls */}
-      <div style={{ position: 'relative', zIndex: 10, background: '#fff' }}>
+      </section>
 
       {/* POV Section - The Statement */}
       <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
@@ -302,8 +299,6 @@ export default function Home() {
           </a>
         </div>
       </section>
-
-      </div>
     </div>
   );
 }
