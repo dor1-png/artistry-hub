@@ -83,8 +83,8 @@ export default function Home() {
       {activeProject && (
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       )}
-      {/* Hero Section - Cinematic Sticky Stage */}
-      <div style={{ height: '200vh' }}>
+      {/* Hero Section - Cinematic Sticky Stage — z-index above the dark overlay */}
+      <div style={{ height: '200vh', position: 'relative', zIndex: 20 }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
           {/* Full-screen image */}
           <img
