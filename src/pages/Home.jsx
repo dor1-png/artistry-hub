@@ -55,69 +55,21 @@ export default function Home() {
       {activeProject && (
         <ProjectModal project={activeProject} onClose={() => setActiveProject(null)} />
       )}
-      {/* Hero Section - Cinematic Sticky Stage — z-index above the dark overlay */}
-      <div style={{ height: '200vh', position: 'relative', zIndex: 20 }}>
-        <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
-          {/* Full-screen image */}
-          <img
-            src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=1920&h=1080&fit=crop&q=95"
-            alt="Dor Regev"
-            className="w-full h-full object-cover"
-          />
-
-          {/* Subtle dark veil */}
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.38)' }} />
-
-          {/* Title — top 15% of viewport, cohesive with nav */}
-          <div style={{ position: 'absolute', top: '15%', left: 0, right: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.9rem' }}>
-            <h1
-              style={{
-                fontSize: 'clamp(2rem, 5vw, 5.5rem)',
-                fontWeight: 300,
-                letterSpacing: '0.28em',
-                color: '#ffffff',
-                lineHeight: 1,
-                textAlign: 'center',
-                margin: 0,
-              }}
-            >
-              DOR REGEV
-            </h1>
-            <p style={{ fontSize: '0.7rem', fontWeight: 300, letterSpacing: '0.3em', color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', margin: 0 }}>
-              Theatre · Contemporary Circus · Performance
-            </p>
-          </div>
-
-          {/* Scroll cue */}
-          <div style={{ position: 'absolute', bottom: '3rem', left: '50%', transform: 'translateX(-50%)' }} className="animate-bounce">
-            <ChevronDown size={22} color="rgba(255,255,255,0.5)" />
-          </div>
+      {/* Hero Section — scrolls away naturally */}
+      <div className="relative h-screen overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1516955656936-0c466ba80df2?w=1920&h=1080&fit=crop&q=95"
+          alt="Dor Regev"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.35)' }} />
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronDown size={22} color="rgba(255,255,255,0.5)" />
         </div>
       </div>
 
-      {/* White surface that layers over the sticky hero as user scrolls */}
-      <div style={{ position: 'relative', zIndex: 10, background: '#fff', isolation: 'isolate' }}>
-
-        {/* Dark-to-Light overlay — sits above content (z10) but below hero (z20) */}
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            background: '#000',
-            opacity: darkOverlayOpacity,
-            pointerEvents: 'none',
-            zIndex: 11,
-          }}
-        />
-
-      {/* Placeholder image to preview the dark-to-light effect */}
-      <div style={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
-        <img
-          src="https://images.unsplash.com/photo-1554244933-d876deb6b2ff?w=1920&h=1080&fit=crop&q=90"
-          alt="Placeholder"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-      </div>
+      {/* Content below the hero */}
+      <div>
 
       {/* POV Section - The Statement */}
       <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
