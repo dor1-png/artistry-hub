@@ -50,11 +50,12 @@
 import Admin from './pages/Admin';
 import Artist from './pages/Artist';
 import Contact from './pages/Contact';
+import Eclecticism from './pages/Eclecticism';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import ThirdPerson from './pages/ThirdPerson';
-import Eclecticism from './pages/Eclecticism';
 import Umbra from './pages/Umbra';
+import CV from './pages/CV';
 import __Layout from './Layout.jsx';
 
 
@@ -62,11 +63,12 @@ export const PAGES = {
     "Admin": Admin,
     "Artist": Artist,
     "Contact": Contact,
+    "Eclecticism": Eclecticism,
     "Gallery": Gallery,
     "Home": Home,
     "ThirdPerson": ThirdPerson,
-    "Eclecticism": Eclecticism,
     "Umbra": Umbra,
+    "CV": CV,
 }
 
 export const pagesConfig = {
