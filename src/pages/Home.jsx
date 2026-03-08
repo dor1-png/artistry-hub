@@ -126,7 +126,7 @@ export default function Home() {
       {/* White surface that layers over the sticky hero as user scrolls */}
       <div style={{ position: 'relative', zIndex: 10, background: '#fff', isolation: 'isolate' }}>
 
-        {/* Dark-to-Light overlay — covers only the content layer, not the hero */}
+        {/* Dark-to-Light overlay — sits above content (z10) but below hero (z20) */}
         <div
           style={{
             position: 'fixed',
@@ -134,7 +134,7 @@ export default function Home() {
             background: '#000',
             opacity: darkOverlayOpacity,
             pointerEvents: 'none',
-            zIndex: 15,
+            zIndex: 11,
           }}
         />
 
