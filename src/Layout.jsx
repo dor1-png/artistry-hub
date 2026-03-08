@@ -135,12 +135,45 @@ export default function Layout({ children, currentPageName }) {
 
       {/* Footer */}
       <footer className="border-t border-gray-100 py-16 px-8 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-gray-400 tracking-widest">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-xs font-light text-gray-400 tracking-widest">
           <button onClick={goHome} className="hover:opacity-60 transition-opacity uppercase">
             Dor Regev
           </button>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-6">
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-1.5 text-gray-300 hover:text-gray-900 transition-colors duration-300"
+              aria-label="Instagram"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+              <span className="text-[9px] tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">Instagram</span>
+            </a>
+            <span className="w-px h-4 bg-gray-200" />
+            <a
+              href="https://soundcloud.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-1.5 text-gray-300 hover:text-gray-900 transition-colors duration-300"
+              aria-label="SoundCloud"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 24 16" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M1 10.5 Q1 8 3 8 Q3 4 7 4 Q8 4 9 4.5"/>
+                <path d="M9 4.5 Q10 2 12 2 Q15 2 15 5.5"/>
+                <path d="M15 5.5 Q15.5 5 16.5 5 Q19 5 19 8 Q21 8 21 10.5 Q21 13 18.5 13 L3.5 13 Q1 13 1 10.5 Z"/>
+              </svg>
+              <span className="text-[9px] tracking-[0.15em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300">SoundCloud</span>
+            </a>
+          </div>
+
           <p>© 2026. All rights reserved.</p>
-          <p>hello@dorregev.com</p>
         </div>
       </footer>
     </div>
