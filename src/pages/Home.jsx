@@ -125,6 +125,19 @@ export default function Home() {
       {/* White surface that layers over the sticky hero as user scrolls */}
       <div style={{ position: 'relative', zIndex: 10, background: '#fff' }}>
 
+        {/* Dark-to-Light overlay — shrouds content until scrolled into view */}
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: '#000',
+            opacity: darkOverlayOpacity,
+            pointerEvents: darkOverlayOpacity > 0 ? 'none' : 'none',
+            zIndex: 20,
+            transition: 'opacity 0.05s linear',
+          }}
+        />
+
       {/* POV Section - The Statement */}
       <section id="pov" className="bg-white" style={{ paddingTop: '120px', paddingBottom: '120px', scrollMarginTop: '80px' }}>
         <div className="max-w-7xl mx-auto px-8">
