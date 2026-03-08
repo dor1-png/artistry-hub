@@ -63,7 +63,7 @@ export default function Layout({ children, currentPageName }) {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="flex flex-col gap-6 px-8 py-6 text-xs font-light tracking-widest uppercase">
-              {navItems.map(item => (
+              {isHome && navItems.map(item => (
                 <button
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
@@ -72,6 +72,13 @@ export default function Layout({ children, currentPageName }) {
                   {item.label}
                 </button>
               ))}
+              <Link
+                to={createPageUrl('CV')}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-left transition-colors hover:text-gray-600"
+              >
+                CV
+              </Link>
             </div>
           </div>
         )}
