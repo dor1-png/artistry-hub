@@ -64,6 +64,19 @@ export default function Home() {
     return Math.min(distance / 400, 1);
   };
 
+  // Dark-to-Light: overlay fades from black (opacity 1) to transparent as user scrolls through hero
+  // Hero is 200vh tall; the reveal happens as scroll progresses from 50vh to 200vh
+  const darkOverlayOpacity = (() => {
+    const heroHeight = typeof window !== 'undefined' ? window.innerHeight * 2 : 800;
+    const revealStart = typeof window !== 'undefined' ? window.innerHeight * 0.5 : 400;
+    const revealEnd = heroHeight * 0.95;
+    if (scrollY <= revealStart) return 1;
+    if (scrollY >= revealEnd) return 0;
+    const progress = (scrollY - revealStart) / (revealEnd - revealStart);
+    // Ease-out cubic
+    return 1 - (1 - Math.pow(1 - progress, 3));
+  })();
+
   return (
     <div className="w-full bg-white">
       {activeProject && (
