@@ -151,7 +151,7 @@ export default function Home() {
           {/* Active Project 1 */}
           <div
             className="mb-40 pb-12 border-b border-gray-300 animate-slide-in-left"
-            style={{ opacity: getOpacity(document.getElementById('active1')?.offsetTop || 0) }}
+
           >
             <h3 className="text-4xl font-light tracking-tight mb-6">Theatronetto Festival 2026</h3>
             <p className="text-lg font-light text-gray-600 leading-relaxed max-w-3xl">
