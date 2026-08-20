@@ -1,0 +1,39 @@
+{
+  "name": "Content",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Unique identifier for the content (e.g., 'hero_title', 'gallery_description')"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "text",
+        "image",
+        "richtext"
+      ],
+      "description": "Type of content"
+    },
+    "value": {
+      "type": "string",
+      "description": "The actual content value"
+    },
+    "section": {
+      "type": "string",
+      "description": "Which section this belongs to (home, gallery, artist, contact)",
+      "enum": [
+        "home",
+        "gallery",
+        "artist",
+        "contact"
+      ]
+    }
+  },
+  "required": [
+    "key",
+    "type",
+    "value",
+    "section"
+  ]
+}
